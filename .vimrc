@@ -9,7 +9,9 @@ set laststatus=2
 " noopkat settings
 "============================================================
 syntax on
-color dracula
+packadd! dracula
+syntax enable
+colorscheme dracula
 set smartindent
 set clipboard=unnamed " use os clipboard
 set tabstop=2 " number of visual spaces per tab
