@@ -1,3 +1,10 @@
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+set clipboard+=unnamedplus
+
 "========
 " Powerline
 python3 from powerline.vim import setup as powerline_setup
