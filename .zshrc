@@ -117,6 +117,7 @@ eval $(thefuck --alias fk)
 # ---- Eza (better ls) -----
 
 alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias lt="eza --tree --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
 # ---- FZF -----
 
@@ -163,3 +164,7 @@ _fzf_comprun() {
 export BAT_THEME=Dracula
 
 alias tmux='tmux -u'
+
+# zoxide
+eval "$(zoxide init zsh)"
+alias cd='z'
