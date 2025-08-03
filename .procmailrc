@@ -1,0 +1,195 @@
+#Preliminaries
+SHELL=/usr/bin/sh               #Use the Bourne shell (check your path!)
+VERBOSE=no
+LOGNAME="nevyn"
+MAILDIR=${HOME}/Maildir         #First check what your mail directory is!
+LOGFILE=${MAILDIR}/procmail.log
+LOG="--- Logging ${LOGFILE} for ${LOGNAME}, "
+
+:0:
+*.^X-Spam-Flag:.YES
+| $DELIVER -m INBOX.Junk
+
+:0:
+* ^From:.*nevyn@anferny.me.uk*
+| $DELIVER -m INBOX.Junk
+
+:0:
+* ^X-Cron-Env:*
+| $DELIVER -m INBOX.Cron
+
+:0:
+* ^From:.*@ebay**
+| $DELIVER -m INBOX.EBay
+
+:0:
+* ^From:.*webmaster@rpgcrossing.com*
+| $DELIVER -m INBOX.RPGCrossing
+
+:0:
+* ^From:.*facebookmail.com*
+| $DELIVER -m INBOX.Facebook
+
+:0:
+* ^From:.*goodreads.com*
+| $DELIVER -m INBOX.GoodReads
+
+:0:
+* ^From:.*customer.service@paizo.com*
+| $DELIVER -m INBOX.Paizo
+
+:0
+* ^From:.*contact@mailer.humblebundle.com*
+| $DELIVER -m INBOX.HumbleBundle
+
+:0:
+* ^From:.*rememberthemilk.com*
+| $DELIVER -m INBOX.Scouts.GSL.RTM
+
+:0:
+* ^From:.*no-reply@gocardless.com*
+| $DELIVER -m INBOX.Scouts.GSL.GoCardless
+
+:0c:
+* ^Reply-To:.*scouts*@*
+! vantmet@proton.me
+
+:0c:
+* ^To:.*45throssendale.org.uk*
+! vantmet@proton.me
+
+:0:
+* ^To:.*gsl@45throssendale.org.uk*
+| $DELIVER -m INBOX.Scouts.GSL
+
+:0:
+* ^Reply-To:.wednesdaycubs@45throssendale.org.uk
+| $DELIVER -m INBOX.Scouts.Cubs.FromOSM
+
+:0:
+* ^To:.*cubs*@*
+| $DELIVER -m INBOX.Cubs
+
+:0:
+* ^To:.*anthony@tjsanalytic.co.uk*
+| $DELIVER -m INBOX.TJS
+
+:0:
+* ^List-Id: Gentoo Linux mail <gentoo-announce.gentoo.org>
+| $DELIVER -m INBOX.Gentoo
+
+:0:
+* ^From.*amazon.co.uk
+| $DELIVER -m INBOX.Amazon
+
+:0:
+* ^From.*amazon.com*
+| $DELIVER -m INBOX.Amazon
+
+:0:
+* ^From.*fiction@dailysciencefiction.com*
+| $DELIVER -m INBOX.DailySciFi
+
+:0:
+* ^To: *thomas*
+| $DELIVER -m INBOX.Boys
+
+:0:
+* ^To: jack@anferny.me.uk
+| $DELIVER -m INBOX.Boys
+
+:0:
+* ^To: thomas@anferny.me.uk
+| $DELIVER -m INBOX.Boys
+
+:0:
+* ^From.*tapatalk.com*
+| $DELIVER -m INBOX.TapaTalk
+
+:0:
+* ^From.*sparkfun.com*
+| $DELIVER -m INBOX.Electronics
+
+:0:
+* ^From.*medium.com*
+| $DELIVER -m INBOX.Medium
+
+:0:
+* ^From.*drop.com*
+| $DELIVER -m INBOX.Massdrop
+
+:0:
+* ^From.*CPC*
+| $DELIVER -m INBOX.Electronics
+
+:0:
+* ^From.*vmware.com*
+| $DELIVER -m INBOX.VMware
+
+:0:
+* ^From.*vmug.com*
+| $DELIVER -m INBOX.VMware
+
+:0:
+* ^From:.*duolingo.com*
+| $DELIVER -m INBOX.DuoLingo
+
+:0:
+* ^From:.*game.co.uk*
+| $DELIVER -m INBOX.Game
+
+:0:
+* ^From:.*twitch.tv*
+| $DELIVER -m INBOX.Twitch
+
+:0:
+* ^From:.*craghoppers*
+| $DELIVER -m INBOX.Craghoppers
+
+:0:
+* ^From:.*strava.com*
+| $DELIVER -m INBOX.Running.Strava
+
+:0:
+* ^From:.*runkeeper*
+| $DELIVER -m INBOX.Running.Runkeeper
+
+:0:
+* ^From:.*bodycoach.com*
+| $DELIVER -m INBOX.Bodycoach
+
+:0:
+* ^From:.*steampowered.com*
+| $DELIVER -m INBOX.Steam
+
+:0:
+*.^From:.*dropbox.com*
+| $DELIVER -m INBOX.DropBox
+
+:0:
+*.^From:.*gear4music.com*
+| $DELIVER -m INBOX.Gear4Music
+
+:0:
+*.^From:.*bitbucket.org*
+| $DELIVER -m INBOX.Atlassian
+
+:0:
+*.^From:.*@buildakit.co.uk*
+| $DELIVER -m INBOX.SelfBuild
+
+:0:
+* ^From:.*news.warhammer.com*
+| $DELIVER -m INBOX.Warhammer
+
+:0:
+* ^From:.*primevideo.com*
+| $DELIVER -m INBOX.Amazon
+
+:0:
+* ^From:.*waylandgames.co.uk*
+| $DELIVER -m INBOX.Wayland
+
+:0:
+* ^From:.*plex.tv*
+| $DELIVER -m INBOX.Plex
