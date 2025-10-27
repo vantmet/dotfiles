@@ -23,6 +23,18 @@ LOG="--- Logging ${LOGFILE} for ${LOGNAME}, "
 | $DELIVER -m INBOX.EBay
 
 :0:
+* ^From:.*costa.co.uk*
+| $DELIVER -m INBOX.Costa
+
+:0:
+* ^From:.*pihut.com*
+| $DELIVER -m INBOX.PiHut
+
+:0:
+* ^From:.*ancestry@email.ancestry.com*
+| $DELIVER -m INBOX.Ancestry
+
+:0:
 * ^From:.*webmaster@rpgcrossing.com*
 | $DELIVER -m INBOX.RPGCrossing
 
@@ -36,7 +48,7 @@ LOG="--- Logging ${LOGFILE} for ${LOGNAME}, "
 
 :0:
 * ^From:.*customer.service@paizo.com*
-| $DELIVER -m INBOX.Paizo
+| $DELIVER -m INBOX.RPG.Paizo
 
 :0
 * ^From:.*contact@mailer.humblebundle.com*
@@ -59,6 +71,10 @@ LOG="--- Logging ${LOGFILE} for ${LOGNAME}, "
 ! vantmet@proton.me
 
 :0:
+* ^To:.*45throssendale.org.uk*
+| $DELIVER -m INBOX.Scouts
+
+:0:
 * ^To:.*gsl@45throssendale.org.uk*
 | $DELIVER -m INBOX.Scouts.GSL
 
@@ -68,7 +84,7 @@ LOG="--- Logging ${LOGFILE} for ${LOGNAME}, "
 
 :0:
 * ^To:.*cubs*@*
-| $DELIVER -m INBOX.Cubs
+| $DELIVER -m INBOX.Scouts.Cubs
 
 :0:
 * ^To:.*anthony@tjsanalytic.co.uk*
@@ -77,6 +93,18 @@ LOG="--- Logging ${LOGFILE} for ${LOGNAME}, "
 :0:
 * ^List-Id: Gentoo Linux mail <gentoo-announce.gentoo.org>
 | $DELIVER -m INBOX.Gentoo
+
+:0:
+* ^From.*lostartpress*
+| $DELIVER -m INBOX.LostArtPress
+
+:0:
+* ^From.*google.com*
+| $DELIVER -m INBOX.Google
+
+:0:
+* ^From.*amazonmusic.com*
+| $DELIVER -m INBOX.Amazon
 
 :0:
 * ^From.*amazon.co.uk
@@ -119,10 +147,6 @@ LOG="--- Logging ${LOGFILE} for ${LOGNAME}, "
 | $DELIVER -m INBOX.Massdrop
 
 :0:
-* ^From.*CPC*
-| $DELIVER -m INBOX.Electronics
-
-:0:
 * ^From.*vmware.com*
 | $DELIVER -m INBOX.VMware
 
@@ -147,12 +171,24 @@ LOG="--- Logging ${LOGFILE} for ${LOGNAME}, "
 | $DELIVER -m INBOX.Craghoppers
 
 :0:
+* ^From:.*runthings.co.uk*
+| $DELIVER -m INBOX.Running
+
+:0:
+* ^From:.*noreply@lakelandtrails.org*
+| $DELIVER -m INBOX.Running.LakelandTrails
+
+:0:
 * ^From:.*strava.com*
 | $DELIVER -m INBOX.Running.Strava
 
 :0:
 * ^From:.*runkeeper*
 | $DELIVER -m INBOX.Running.Runkeeper
+
+:0:
+* ^From:.*notifications@github.com*
+| $DELIVER -m INBOX.Github
 
 :0:
 * ^From:.*bodycoach.com*
@@ -180,16 +216,53 @@ LOG="--- Logging ${LOGFILE} for ${LOGNAME}, "
 
 :0:
 * ^From:.*news.warhammer.com*
-| $DELIVER -m INBOX.Warhammer
+| $DELIVER -m INBOX.RPG.Warhammer
 
 :0:
 * ^From:.*primevideo.com*
 | $DELIVER -m INBOX.Amazon
 
 :0:
+* ^From:.*burningwheel.com*
+| $DELIVER -m INBOX.RPG.BurningWheel
+
+:0:
+* ^From:.*koboldpress.com*
+| $DELIVER -m INBOX.RPG.KoboldPress
+
+:0:
+* ^From:.*demiplane.com*
+| $DELIVER -m INBOX.RPG.DemiPlane
+
+:0:
+* ^From:.*itch.io*
+| $DELIVER -m INBOX.RPG.Itch
+
+:0:
 * ^From:.*waylandgames.co.uk*
-| $DELIVER -m INBOX.Wayland
+| $DELIVER -m INBOX.RPG.Wayland
 
 :0:
 * ^From:.*plex.tv*
 | $DELIVER -m INBOX.Plex
+
+:0:
+*^From.*@mail.instagram.com*
+| $DELIVER -m INBOX.Instagram
+
+:0:
+*^From:.*manticgames*
+| $DELIVER -m INBOX.RPG.Mantic
+
+:0:
+*^From:.*letterboxd.com*
+| $DELIVER -m INBOX.Letterboxd
+
+:0:
+*^From:.*no-reply@drivethrurpg.com*
+| $DELIVER -m INBOX.RPG.DriveThru
+
+:0:
+*^From:.*sheetmusicdirect.com*
+| $DELIVER -m INBOX.SheetMusicDirect
+
