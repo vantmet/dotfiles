@@ -117,7 +117,7 @@ eval $(thefuck --alias)
 eval $(thefuck --alias fk)
 # ---- Eza (better ls) -----
 
-alias ls="eza --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza --color=always --long --git --icons=always --no-time --no-user --no-permissions"
 alias lt="eza --tree --color=always --long --git --no-filesize --icons=always --no-time --no-user --no-permissions"
 
 # ---- FZF -----
